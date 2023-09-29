@@ -20,7 +20,7 @@ app.use(cors());
 app.use(express.static('public'));
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/ecommerce', {
+mongoose.connect('mongodb+srv://mehaljain:mehaljain@cluster0.cncrra4.mongodb.net/ecommerce', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
@@ -30,16 +30,16 @@ mongoose.connect('mongodb://127.0.0.1:27017/ecommerce', {
 
 
 // Define API route
-app.get("/api/data", (req, res) => {
-  const responseData = { message: "Hello from the backend!" };
-  res.json(responseData);
-});
+// app.get("/api/data", (req, res) => {
+//   const responseData = { message: "Hello from the backend!" };
+//   res.json(responseData);
+// });
 
 app.get("/api/register", (req, res) => {
   const responseRegister = { message: "Hello from the register backend!" };
   res.json(responseRegister);
 });
-
+ 
 app.get("/api/contact", (req, res) => {
   const responseContact = { message: "Hello from the contact backend!" };
   res.json(responseContact);

@@ -28,8 +28,10 @@ exports.getProduct = async (req, res) => {
 
 exports.getProductById = async (req, res) => {
   try {
-    const { id } = req.params;
-    const product = await Product.findById(id);
+    const { id } =req.params
+    console.log(id)
+    const product = await Product.findOne({id:id});
+    console.log(product)
     if (!product) {
       return res.status(404).json({ error: 'Product not found' });
     }

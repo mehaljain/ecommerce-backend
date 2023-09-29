@@ -5,6 +5,7 @@ const User = require('../models/userSchema');
 router.post('/api/register', async (req, res) => {
   try {
     const { fullname, email, password, confirmpassword } = req.body;
+    console.log(req.body);
     // Validate input data (e.g., check for empty fields, validate password complexity)
 
     // Check if the user already exists in the database
@@ -50,8 +51,6 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-// Define other authentication routes (logout) similarly
 
 
 module.exports = router;
